@@ -1,0 +1,300 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Information-Theoretic Segmentation by Inpainting Error Maximization</title>
+
+  <link href='https://fonts.googleapis.com/css?family=Overpass' rel='stylesheet'>
+  <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+  <link href="mainpage.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+<!-- conference logo -->
+<!--
+<div class="row" style="text-align:center;padding:0;margin:0">
+  <div class="container">
+    <a href="https://eccv2020.eu/" target="new"><img src="imgs/eccv.png" height="90px"></a>
+  </div>
+</div>
+-->
+
+<!-- Authors -->
+<div class="container-fluid">
+  <div class="row" style="padding-top:80px">
+    <h1><span style="font-size:40px;color:#333;font-weight:800">Information-Theoretic Segmentation by Inpainting Error Maximization</span></h1>
+    <div class="authors">
+      <span style="font-size:18px"><a href="https://ttic.uchicago.edu/~savarese/" style="color:#1075bc" target="new">Pedro Savarese<sup>1</sup></a></span>
+      &nbsp;
+      <span style="font-size:18px"><a href="https://cs.princeton.edu/~suhk/" style="color:#1075bc" target="new">Sunnie S. Y. Kim<sup>2</sup></a></span>
+      &nbsp;
+      <span style="font-size:18px"><a href="https://ttic.uchicago.edu/~mmaire/" style="color:#1075bc" target="new">Michael Maire<sup>3</sup></a></span>
+      &nbsp;
+      <span style="font-size:18px"><a href="https://ttic.uchicago.edu/~gregory/" style="color:#1075bc" target="new">Greg Shakhnarovich<sup>1</sup></a></span>
+      &nbsp;
+      <span style="font-size:18px"><a href="https://ttic.uchicago.edu/~dmcallester/" style="color:#1075bc" target="new">David McAllester<sup>1</sup></a></span>
+      <br>
+      <span style="font-size:18px"><sup>1</sup>Toyota Technological Institute at Chicago &nbsp;&nbsp;&nbsp; <sup>2</sup>Princeton University&nbsp;&nbsp;&nbsp; <sup>3</sup>University of Chicago<br><br></span>
+    </div>
+  </div>
+</div>
+
+<!-- Figure 1 -->
+<div class="row" style="text-align:center;padding-top:10px;margin:0">
+  <div class="container">
+    <img src="imgs/fig1.png" style="width:50%">
+  </div>
+</div>
+<div class="container">
+  Illustration of our Inpainting Error Maximization (IEM) framework for 
+  completely unsupervised segmentation, applied to flowers, birds, and cars. 
+  Segmentation masks maximize the error of inpainting foreground given 
+  background and vice-versa.
+</div>
+  
+&nbsp;
+
+<!-- Icons -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-0 col-md-0 col-sm-0"></div>
+
+    <!--<div class="col-xs-2 col-xs-offset-1 text-center">-->
+    <div class="col-xs-2 col-xs-offset-4 text-center">
+      <div class="service-box mt-5 mx-auto">
+        <a href="https://arxiv.org/abs/2012.07287" target="_blank">
+          <i class="fa fa-4x fa-file-text-o text-primary mb-3"></i>
+        </a>
+        <h4 class="mb-3" style="font-size:18px">Paper</h4>
+      </div>
+    </div>
+
+    <div class="col-xs-3 text-center">
+      <div class="service-box mt-5 mx-auto">
+        <a href="https://github.com/lolemacs" target="_blank">
+          <i class="fa fa-4x fa-github text-primary mb-3 "></i>
+        </a>
+        <h4 class="mb-3" style="font-size:18px">Code</h4>
+        </div>
+    </div>
+
+    <!--
+    <div class="col-xs-2 text-center">
+      <div class="service-box mt-5 mx-auto">
+        <a href="https://bit.ly/DST-demo" target="_blank">
+          <i class="fa fa-2x fa-paint-brush text-primary mb-3 "></i>
+        </a>
+        <h4 class="mb-3" style="font-size:18px">Demo</h4>
+      </div>
+    </div>
+    -->
+
+    <!--
+    <div class="col-xs-2 text-center">
+      <div class="service-box mt-5 mx-auto">
+        <a href="https://youtu.be/mVU5tSxS4is" target="_blank">
+          <i class="fa fa-2x fa-video-camera text-primary mb-3 "></i>
+        </a>
+        <h4 class="mb-3" style="font-size:18px">Talk</h4>
+      </div>
+    </div>
+    -->
+
+    <!--
+    <div class="col-xs-2 text-center">
+      <div class="service-box mt-5 mx-auto">
+        <a href="https://github.com/sunniesuhyoung/DST/blob/master/dst.bib" target="_blank">
+          <i class="fa fa-3x fa-quote-right text-primary mb-3 "></i>
+        </a>
+        <h4 class="mb-3" style="font-size:18px">Bibtex</h4>
+      </div>
+    </div>
+    -->
+
+  </div>
+</div>
+
+<!-- Abstract -->
+<div class="container">
+  <h2>Abstract</h2>
+  We study image segmentation from an information-theoretic perspective,
+  proposing a novel adversarial method that performs unsupervised segmentation
+  by partitioning images into maximally independent sets. More specifically,
+  we group image pixels into foreground and background, with the goal of minimizing
+  predictability of one set from the other. An easily computed loss drives a
+  greedy search process to maximize inpainting error over these partitions.
+  Our method does not involve training deep networks, is computationally cheap,
+  class-agnostic, and even applicable in isolation to a single unlabeled image.
+  Experiments demonstrate that it achieves a new state-of-the-art in unsupervised
+  segmentation quality, while being substantially faster and more general than
+  competing approaches.
+
+</div>
+
+<!-- Highlight -->
+<!--
+<div class="container" >
+  <h2>1 Minute Summary</h2>
+  <div>
+    <div style="width: 75%;height: 0;padding-bottom: 42%;position: relative;margin-left: auto;margin-right: auto;">
+      <iframe src="https://youtube.com/embed/7qUzfcn6TPk" allowfullscreen style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"></iframe>
+    </div>
+  </div>
+</div>
+-->
+
+<!-- Method -->
+<div class="container" >
+  <h2>Information-theoretic segmentation</h2>
+  
+  Our Inpainting Error Maximization (IEM) framework is motivated by the intuition 
+  that a segmentation into objects minimizes the mutual information between the pixels 
+  in the segments and hence makes inpainting of one segment given the others difficult. 
+  This gives a natural adversarial objective where a segmenter tries to maxmize, 
+  while an inpainter tries to minimize, inpainting error. However, rather than adopt 
+  an adversarial training objective we found it more effective to fix a basic inpainter 
+  and directly maximize inpainting error through a form of gradient descent on the segmentation. 
+  IEM is learning-free and can be applied directly to any image in any domain.
+    
+  <div class="row" style="text-align:center;padding-top:20px;padding-bottom:20px;margin:0">
+    <img src="imgs/pipeline.png" style="width:99%">
+  </div>
+      
+  Given an unlabeled image X, a mask generator module first produces segmentation
+  masks (e.g., foreground M and background <span style="text-decoration:overline">M</span>). 
+  Each mask selects a subset of pixels from the original image by performing an 
+  element-wise product between the mask and the image, hence partitioning the image 
+  into regions. Inpainting modules try to reconstruct each region given all others in 
+  the partition, and the IEM loss is defined by a weighted sum of inpainting errors.
+
+  <div class="row" style="text-align:center;padding-top:20px;padding-bottom:20px;margin:0">
+    <img src="imgs/gtmask.png" style="width:40%">
+  </div>
+  
+  Foreground and background inpainting results using ground-truth, eroded (smaller),
+  and dilated (bigger) masks. We see that the ground-truth mask incurs high
+  inpainting error for both the foreground and the background, while the eroded
+  mask allows reasonable inpainting of the foreground and the dilated mask allows
+  reasonable inpainting of the background. Hence we expect IEM, which maximizes
+  the inpainting error of each partition given the others, to yield a segmentation
+  mask close to the ground-truth.
+
+</div>
+
+<!-- Results -->
+<div class="container" >
+  <h2>Results</h2>
+  
+  Unsupervised segmentation results on Flowers, CUB-200-2011, and LSUN Car. 
+  Segmentation masks used for evaluation are publicly available ground-truth 
+  (Flowers, CUB-200-2011) or automatically generated with Mask R-CNN (LSUN Car).
+  
+  <div class="row" style="text-align:center;padding-top:10px;padding-bottom:20px;margin:0">
+    <div class="container">
+      <img src="imgs/table.png" style="width:100%">
+    </div>
+  </div>
+  
+  <div class="row" style="text-align:center;padding-top:10px;padding-bottom:20px;margin:0">
+    <div class="container">
+      <img src="imgs/flowers.png" style="width:33%">
+      <img src="imgs/birds.png" style="width:33%">
+      <img src="imgs/cars.png" style="width:33%">
+    </div>
+  </div>
+  
+</div>
+</div>
+
+<!--Related work-->
+<div class="container" >
+  <h2>Related Work</h2>
+  <div>
+    <a href="https://www.microsoft.com/en-us/research/publication/grabcut-interactive-foreground-extraction-using-iterated-graph-cuts/" target="_blank">GrabCut - Interactive Foreground Extraction using Iterated Graph Cuts. </a> 
+    Carsten Rother, Vladimir Kolmogorov, and Andrew Blake. SIGGRAPH 2004.
+  <div>
+  </div>
+    <b>Comment</b>: A classic weakly-supervised segmentation algorithm. We compare our IEM results to results from this method.
+  </div>
+
+  &nbsp;
+  
+  <div>
+    <a href="https://arxiv.org/abs/1905.13539" target="_blank">Unsupervised Object Segmentation by Redrawing.</a> 
+    Mickaël Chen, Thierry Artières, and Ludovic Denoyer. NeurIPS 2019.
+  <div>
+  </div>
+    <b>Comment</b>: A GAN-based unsupervised segmentation method. We compare our IEM results to results from this method.
+  </div>
+  
+  &nbsp;
+  
+  <div>
+    <a href="https://arxiv.org/abs/1905.12663" target="_blank">Emergence of Object Segmentation in Perturbed Generative Models.</a> 
+    Adam Bielski and Paolo Favaro. NeurIPS 2019.
+  <div>
+  </div>
+    <b>Comment</b>: A GAN-based unsupervised segmentation method. We compare our IEM results to results from this method.
+  </div>
+  
+  &nbsp;
+  
+  <div>
+    <a href="https://arxiv.org/abs/2006.04988" target="_blank">Big GANs Are Watching You: Towards Unsupervised Object Segmentation with Off-the-Shelf Generative Models.</a> 
+    Andrey Voynov, Stanislav Morozov, and Artem Babenko. arXiv 2020.
+  <div>
+  </div>
+    <b>Comment</b>: This work examines the latent space of an off-the-shelf GAN (BigBiGAN), obtain saliency masks of synthetic images via latent space manipulations, 
+    and using these masks, trains a segmentation model with supervision. We don't compare IEM to it as it involves manual examination of latent space manipulation directions.
+  </div>
+  
+  &nbsp;
+  
+  <div>
+    <a href="https://arxiv.org/abs/1912.13471" target="_blank">OneGAN: Simultaneous Unsupervised Learning of Conditional Image Generation, Foreground Segmentation, and Fine-Grained Clustering.</a> 
+    Yaniv Benny and Lior Wolf. ECCV 2020.
+  <div>
+  </div>
+    <b>Comment</b>: OneGAN, composed of multiple encoders, generators, and discriminators, solves several tasks simultaneously, including foreground segmentation.
+    However, we don't compare IEM to it as it utilizes weak supervision from class labels and clean background images.
+  </div>
+  
+  &nbsp;
+  
+  <div>
+    <a href="https://arxiv.org/abs/2008.07012" target="_blank">Time-Supervised Primary Object Segmentation.</a> 
+    Yanchao Yang, Brian Lai, and Stefano Soatto. arXiv 2020.
+  <div>
+  </div>
+    <b>Comment</b>: This work segments objects in video by minimizing the mutual information between motion field partitions, 
+    which they approximate with an adversarial inpainting network. We likewise focus on inpainting objectives, but in a manner 
+    not anchored to trained adversaries and not reliant on video dynamics.
+  </div>
+  
+  &nbsp;
+  
+  <div>
+    <a href="https://arxiv.org/abs/2008.07012" target="_blank">Inpainting Networks Learn to Separate Cells in Microscopy Images.</a> 
+    Steffen Wolf, Fred Hamprecht and Jan Funke. BMVC 2020.
+  <div>
+  </div>
+    <b>Comment</b>: This work segment cells in microscopy images by minimizing a measure of information gain between partitions. 
+    While philosophically aligned in terms of objective, our optimization strategy and algorithm differs from this work.
+  </div>
+
+</div>
+
+
+<div class="container" >
+  <h2>Contact</h2>
+  <div><a href="https://ttic.uchicago.edu/~savarese/" style="color:#222" target="_blank">Pedro Savarese</a> (savarese@ttic.edu)</div>
+</div>
+
+<div id="footer">
+</div>
+
+
+</body>
+</html>
